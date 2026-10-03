@@ -33,8 +33,18 @@ def shuffle_xy(X, y, seed=42):
     # Same indices apply to both X and y
     return X[indices], y[indices]
 
-# Step 2 - split_train_val_test (not yet solved)
-# TODO: implement
+# Step 2 - split_train_val_test
+def split_train_val_test(X, y, train_frac=0.6, val_frac=0.2):
+    # TODO: Slice already-shuffled data into contiguous train/val/test partitions...
+    n = len(y )
+    n_train = int(n * train_frac)
+    n_val = int(n * val_frac)
+    
+    train = list(range(0,n_train))
+    val = list(range(n_train,n_train+n_val))
+    test = list(range(n_train+n_val,n))
+
+    return X[train] , y[train] ,X[val] , y[val],X[test] , y[test]
 
 # Step 3 - compute_feature_stats (not yet solved)
 # TODO: implement
