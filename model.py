@@ -96,8 +96,13 @@ def mse_loss(y_true, y_pred):
     a = a**2
     return np.sum(a)/(y_true.shape[0])
 
-# Step 9 - mse_gradient (not yet solved)
-# TODO: implement
+# Step 9 - mse_gradient
+def mse_gradient(X, y_true, y_pred):
+    N = len(X)
+    y_erro = y_true - y_pred 
+    
+
+    return (-2/N)*(X.T)@y_erro
 
 # Step 10 - normal_equation (not yet solved)
 # TODO: implement
